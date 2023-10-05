@@ -3,7 +3,8 @@ module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
     devServer: {
-      allowedHosts: ['*.ngrok.io'],
+      // allowedHosts: ['*.ngrok.io'],
+      https: true,
     },
   },
 })
