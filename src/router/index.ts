@@ -7,6 +7,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'home',
     component: HomeView
   },
+  {
+    path: '/:id',
+    name: 'detail',
+    component: () => import ('../views/ApplicantDetail.vue')
+  },
+
   
 ]
 

@@ -1,16 +1,43 @@
 <template>
-    <div class = "flex items-center  w-full h-12 bg-blue-900">
-        <div class = "rounded-full w-7 h-7 bg-blue-300 text-center flex justify-center items-center  text-white text-xs">
-            AM
+  <router-link :to = "'/' + user?.id">
+   
+    <div class = "flex items-center  h-14 mb-2 pl-2">
+        <div class = "w-[10%]">
+        <div class = "  rounded-full w-9 h-9 bg-blue-300 text-center flex justify-center items-center  text-white text-sm">
+            {{ initials }}
         </div>
-        <p class = "ml-2 text-white text-sm">Amanuel Mulugeta</p>
+        </div>
+        <p class = "ml-4 text-white overflow-hidden whitespace-nowrap overflow-ellipsis">{{ user?.name }}</p>
     </div>
+   
+    </router-link>
+    
+    
 </template>
 
 <script lang = "ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
-   
+    props: {
+        user: Object
+    },
+
+    setup(props) {
+        
+        const initials = computed(() => {
+                if (props && props.user && props.user.name) {
+                const fullName = props.user.name.trim();
+                const [firstName, lastName] = fullName.split(' ');
+                const firstInitial = firstName ? firstName[0] : '';
+                const lastInitial = lastName ? lastName[0] : '';
+                return firstInitial + lastInitial;
+            } else {
+                return '';
+            }
+            
+        });
+        return {initials}
+    }
     })
 </script>
