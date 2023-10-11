@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "tunnel": "lt --port 8080",
-    "start": "ng serve --host=0.0.0.0 --configuration=dev --disableHostCheck=true" 
+    "start": "vue-cli-service serve  --host=0.0.0.0 --configuration=dev --disableHostCheck=true" 
   },
   "dependencies": {
     "core-js": "^3.8.3",
