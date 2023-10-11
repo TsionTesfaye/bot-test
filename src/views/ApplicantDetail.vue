@@ -1,9 +1,9 @@
 <template>
-    <div class = "h-screen bg-[rgb(23,33,43)] relative">
+    <div class = "h-fit bg-[rgb(23,33,43)] relative">
         <NameTitle :user = "user"/>
         <CoverPortifolio :user = "user"/>
 
-        <div v-if="user?.status != 'hired' && user?.status != 'rejected'" class = "  bottom-0 flex justify-center m-4  gap-24">
+        <div v-if="user?.status != 'hired' && user?.status != 'rejected'" class = "  flex justify-center m-4  gap-24">
             <button class = "p-2 text-center bg-green-500 rounded-lg text-white"> {{ button1 }}</button>
             <button class = "p-2 text-center bg-red-500 rounded-lg text-white">{{ button2 }}</button>
         </div>
@@ -34,7 +34,7 @@ export default defineComponent({
                 button1.value = "Short List"
                 button2.value= "Reject"
             }
-            else if (user.value && user.value.status === "shortListed") {
+            else if (user.value && user.value.status === "shortlisted") {
                 button1.value = "Hire"
                 button2.value = "Reject"
             }
