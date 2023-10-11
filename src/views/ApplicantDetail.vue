@@ -21,6 +21,7 @@ import { User } from '../../db/users'
 export default defineComponent({
     components: { NameTitle, CoverPortifolio},
     setup() {
+       
         const route = useRoute()
         const userStore = useUserStore()
 
