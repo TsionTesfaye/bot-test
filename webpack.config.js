@@ -1,27 +1,12 @@
-// webpack.config.js
 module.exports = {
-  // ...
-  module: {
-    rules: [
-      // ...
-      {
-        test: /\.pdf$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]', // Output file name and extension
-            },
-          },
-        ],
-      },
-    ],
-  },
+  publicPath: '/',
   devServer: {
-   compress: true,
-    port: 3000,
-
-    // 👇️ set this property
-    disableHostCheck: true
-}
+    allowedHosts: [
+      '.ngrok.io', // Allow hosts matching .ngrok.io
+      'localhost',
+      '89cf-196-188-35-226.ngrok-free.app'// Allow localhost
+      // Add other allowed hosts as needed
+    ],
+     
+  },
 };

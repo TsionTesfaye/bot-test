@@ -1,13 +1,16 @@
 <template>
-  <router-view class = ""/>
+  <router-view class = "min-h-[100vh]"/>
 </template>
 
 
 <script lang = "ts">
 import { defineComponent } from 'vue';
+import WebApp from '@twa-dev/sdk'
 
 export default defineComponent({
- 
+  setup() {
+    console.log( WebApp.initDataUnsafe )
+  }
 })
 </script>
 

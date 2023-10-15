@@ -1,17 +1,6 @@
-export interface User {
-    id: number;
-    name: string;
-    status: string;
-    title: string;
-    regularJob: object
-    freelanceJob: object;
-    cover: string;
-    portifolioLink: Array<string>
-    cv: string
 
-}
 
-export const users: User[] = [
+export const users  = [
     {
         id: 1,
         name: "Amanuel Belayneh",
@@ -25,7 +14,7 @@ export const users: User[] = [
             hired: 2,
             completed: 1
         },
-        cover: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
+        cover: "Lorem ipsum doljjfdhfhd ikdjfkdjfkd jfkdjfkdj djfjdhfdsjdh dhkhfdujhd ijhuhfiduhf ijddjds ijdfijdifdj ijdfijdfs or sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
         portifolioLink: ["www.freelanceethiopia.com", "www.freelanceethiopia.com", "www.freelanceethiopia.com"],
         cv: "pdf.pdf"
     },

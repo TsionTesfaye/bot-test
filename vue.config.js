@@ -1,14 +1,22 @@
 const { defineConfig } = require('@vue/cli-service');
 
 module.exports = defineConfig({
+   publicPath: '/',
   transpileDependencies: [], // Specify dependencies to transpile or set to false
 
-  configureWebpack: {
-    devServer: {
-      // Uncomment and configure devServer options as needed
-      // allowedHosts: ['*.ngrok.io'],
-      // https: true,
-    },
+  
+  devServer: {
+    //https: true,
+     allowedHosts: [
+      '.ngrok.io',
+        'localhost',
+        '89cf-196-188-35-226.ngrok-free.app'
+      ],
+       client: {
+        webSocketURL: 'auto://0.0.0.0:0/ws'
+   }
+      
+    
   },
 
   chainWebpack: (config) => {
