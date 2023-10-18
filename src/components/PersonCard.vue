@@ -1,5 +1,5 @@
 <template>
-    <div v-for="(userList, i) in user?.applications" :key="i" @click="goTodetail(userList)">
+    <div @click="goTodetail(user)">
 
         <div class="flex items-center h-14 mb-2 pl-2">
             <div class="">
@@ -11,10 +11,10 @@
             </div>
 
             <p class="ml-4 text-white overflow-hidden whitespace-nowrap overflow-ellipsis">{{
-                userList?.job_seeker.user.first_name + " " + userList?.job_seeker.user.last_name }}</p>
+                user?.job_seeker?.user?.first_name + " " + user?.job_seeker?.user?.last_name }}</p>
         </div>
         <div class="mt-30">
-           
+
         </div>
     </div>
 </template>
@@ -34,14 +34,13 @@ export default defineComponent({
         const goTodetail = (user: any) => {
             console.log(user)
             useStore.getApplicantDetail(user);
+            localStorage.setItem("appId", user.id)
             router.push("/applicantDetail/" + user.id)
         }
         const initials = computed(() => {
-            if (props && props.user && props.user.name) {
-                const fullName = props.user.name.trim();
-                const [firstName, lastName] = fullName.split(' ');
-                const firstInitial = firstName ? firstName[0] : '';
-                const lastInitial = lastName ? lastName[0] : '';
+            if (props && props.user && props.user?.job_seeker?.user?.first_name && props.user?.job_seeker?.user?.last_name) {
+                const firstInitial = props.user.job_seeker.user.first_name ? props.user.job_seeker.user.first_name[0] : '';
+                const lastInitial = props.user.job_seeker.user.last_name ? props.user.job_seeker.user.last_name[0] : '';
                 return firstInitial + lastInitial;
             } else {
                 return '';

@@ -13,7 +13,7 @@
             </div>
         </div>
         <div  class="mt-5 w-[250px] h-24 bg-[rgb(24,25,29)] rounded-3xl flex items-center">
-            <a :href="'http://afriworkapidev-env.eba-b34zspxx.eu-north-1.elasticbeanstalk.com:8090/file/uploads/' + user.id"  target="_blank"></a>
+            <a :href="'http://afriworkapidev-env.eba-b34zspxx.eu-north-1.elasticbeanstalk.com:8090/file/uploads/' + user.job_seeker?.cv"  target="_blank"></a>
             <img src="../assets/pictures/attach-file.png" class="w-14 ml-4">
             <p class="ml-6 mb-7">{{ user?.cv }}</p>
         </div>
