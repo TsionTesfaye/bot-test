@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: '/ListOfApplicants/:id',
+    path: '/ListOfApplicants/:jobId/:userId',
     //name: 'home',
     component: () => import ('../views/ListOfApplicants.vue')
   },

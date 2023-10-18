@@ -5,9 +5,9 @@
         <CoverPortifolio :user="userDetail" />
         {{ userDetail }}
 
-        <div v-if="userDetail.rejected_at== null && userDetail.hire_entry == null " class="  flex justify-center mt-3  gap-24">
+        <div v-if="userDetail.rejected_at == null && userDetail.hire_entry == null " class="  flex justify-center mt-3  gap-24">
             <button @click = "manageButton()" class="p-2 text-center bg-green-500 rounded-lg text-white"> {{ button1 }}</button>
-            <button @click = "rejectButton()" class="p-2 text-center bg-red-500 rounded-lg text-white">{{ button2 }}</button>
+            <button @click = "rejectButton()"  class="p-2 text-center bg-red-500 rounded-lg text-white">{{ button2 }}</button>
         </div>
     </div>
 </template>

@@ -26,19 +26,20 @@ export default defineComponent({
   setup() {
     const userStore = useUserStore();
     const route = useRoute();
-    const id = route.params.id;
+    const id = route.params.jobId;
+    const userId = route.params.userId
     const filteredApplicants = [];
 
 
     onMounted(async () => {
-      await userStore.login(id)
+      await userStore.login(userId)
       await userStore.getUsers(id);
     });
 
     const users: any = computed(() => {
       const users = userStore.users.jobs
       console.log(userStore.users);
-      
+
       if (!Array.isArray(users)) {
         return []; // Return an empty array if users is not an array
       }

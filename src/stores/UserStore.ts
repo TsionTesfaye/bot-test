@@ -157,7 +157,7 @@ export const useUserStore = defineStore("userStore", {
         const { data } = await apolloClient.mutate({
           mutation: gql`
             mutation login_bypass {
-  	bypass_login(user_id:"52455dc3-c89f-4759-afb1-944f2f9dd75d"){
+  	bypass_login(user_id:"${userId}"){
 		token
 	}
 }
